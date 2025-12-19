@@ -6,7 +6,7 @@
   <!-- ✅ SEO Meta Description -->
   <meta name="description" content="Cybersecurity Analyst portfolio showcasing SIEM triage, vulnerability management, IAM/MFA administration, phishing investigation, and incident response workflows.">
 
-  <!-- ✅ Open Graph (LinkedIn, Slack, Teams) -->
+  <!-- ✅ Open Graph -->
   <meta property="og:title" content="Luca Iannino | Cybersecurity Analyst Portfolio">
   <meta property="og:description" content="Portfolio featuring SIEM triage, vulnerability management, IAM/MFA, phishing investigation, and incident response projects.">
   <meta property="og:type" content="website">
@@ -191,18 +191,23 @@
       color: #777;
     }
 
-    /* ✅ Glitch animation */
-    @keyframes glitchStory {
-      0% { opacity: 1; transform: none; }
-      20% { opacity: 0.85; transform: skew(0.5deg); }
-      40% { opacity: 1; transform: skew(-0.5deg); }
-      60% { opacity: 0.9; transform: skew(0.3deg); }
-      80% { opacity: 1; transform: none; }
-      100% { opacity: 1; transform: none; }
+    /* ✅ Safe glitch animations */
+    @keyframes glitch1 {
+      0% { transform: translate(0,0); }
+      20% { transform: translate(-2px,-1px); }
+      40% { transform: translate(1px,1px); }
+      60% { transform: translate(-1px,1px); }
+      80% { transform: translate(2px,-1px); }
+      100% { transform: translate(0,0); }
     }
 
-    .glitch-story {
-      animation: glitchStory 2.5s infinite;
+    @keyframes glitch2 {
+      0% { transform: translate(0,0); }
+      20% { transform: translate(2px,1px); }
+      40% { transform: translate(-1px,-1px); }
+      60% { transform: translate(1px,-1px); }
+      80% { transform: translate(-2px,1px); }
+      100% { transform: translate(0,0); }
     }
   </style>
 </head>
@@ -253,14 +258,32 @@
     </a>
   </p>
 
-  <!-- ✅ Glitch text animation -->
-  <div class="glitch-story" style="
-    text-align:center;
-    margin-top:12px;
-    font-size:1rem;
-    color:#00ffff;
-  ">
-    Every alert tells a story...
+  <!-- ✅ Safe glitch animation -->
+  <div style="text-align:center; margin-top:12px;">
+    <span style="
+      font-size:1rem;
+      color:#00ffff;
+      position:relative;
+      display:inline-block;
+    ">
+      Every alert tells a story...
+      <span style="
+        position:absolute;
+        left:0;
+        top:0;
+        color:#00b3ff;
+        opacity:0.7;
+        animation: glitch1 1.8s infinite;
+      ">Every alert tells a story...</span>
+      <span style="
+        position:absolute;
+        left:0;
+        top:0;
+        color:#ff00ff;
+        opacity:0.7;
+        animation: glitch2 1.8s infinite;
+      ">Every alert tells a story...</span>
+    </span>
   </div>
 
 </section>
