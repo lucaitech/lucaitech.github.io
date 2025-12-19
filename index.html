@@ -46,6 +46,47 @@
             color: #00ff9d;
         }
 
+        /* PROFILE PHOTO GLOW */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #00ff9d;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 15px #00ff9d;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #00ff9d; }
+            to { box-shadow: 0 0 25px #00b3ff; }
+        }
+
+        /* TYPING EFFECT */
+        .typing {
+            width: 22ch;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #00ff9d;
+            animation: typing 3s steps(22), blink .75s step-end infinite;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2rem;
+            color: #00ff9d;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 22ch; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ff9d; }
+        }
+
         /* PROJECT CARDS */
         .projects-container {
             display: grid;
@@ -97,10 +138,16 @@
 </nav>
 
 <section id="about">
-    <h1>Hi, I'm Luca Iannino</h1>
-    <p>
-        Cybersecurity Analyst specializing in threat detection, SIEM optimization, 
-        vulnerability management, and incident response. I strengthen enterprise 
+
+    <!-- ✅ GLOWING PHOTO -->
+    <img src="photo.jfif" alt="Luca Iannino" class="profile-pic">
+
+    <!-- ✅ TYPING EFFECT NAME -->
+    <h1 class="typing">Hi, I'm Luca Iannino</h1>
+
+    <p style="text-align:center; max-width:700px; margin:20px auto;">
+        Cybersecurity Analyst specializing in threat detection, SIEM optimization,
+        vulnerability management, and incident response. I strengthen enterprise
         security posture through proactive defense and strategic workflows.
     </p>
 </section>
