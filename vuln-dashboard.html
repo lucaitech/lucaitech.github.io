@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vulnerability Management Dashboard | Luca Iannino</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0a0f14;
+      color: #e0e0e0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d1117;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00b3ff;
+    }
+
+    section {
+      padding: 80px 10% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      margin-bottom: 15px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .example-box {
+      background: #111820;
+      border: 1px solid #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
+</nav>
+
+<section>
+  <h1>Vulnerability Management Dashboard</h1>
+
+  <p>
+    This project demonstrates how I interpret vulnerability scan data, prioritize remediation,
+    and communicate risk to stakeholders. The examples below use fictionalized data modeled
+    after real-world Rapid7/Nessus reporting formats.
+  </p>
+
+  <h2>1. Understanding the Scan Data</h2>
+  <p>
+    A typical vulnerability scan includes severity ratings, exploitability, affected assets,
+    and remediation steps. My first step is always to categorize findings into meaningful groups:
+  </p>
+
+  <ul>
+    <li>Critical vulnerabilities with known exploits</li>
+    <li>High-risk vulnerabilities on critical assets</li>
+    <li>Medium/Low findings that can be batched</li>
+    <li>Configuration weaknesses (TLS, SMB, outdated protocols)</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Sample Scan Summary (Fictional):</strong><br><br>
+    Critical: 12<br>
+    High: 47<br>
+    Medium: 103<br>
+    Low: 88<br>
+    Total Assets Scanned: 214
+  </div>
+
+  <h2>2. Prioritization Framework</h2>
+  <p>
+    I prioritize vulnerabilities using a combination of:
+  </p>
+
+  <ul>
+    <li>CVSS score</li>
+    <li>Exploit availability (Metasploit, CISA KEV list)</li>
+    <li>Asset criticality (servers, domain controllers, finance systems)</li>
+    <li>Exposure (internet-facing vs internal)</li>
+    <li>Business impact</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Example Prioritization:</strong>
+    <ul>
+      <li>Critical + Known Exploit + Internet-Facing → Immediate remediation</li>
+      <li>High + Privileged Asset → 7-day SLA</li>
+      <li>Medium + Workstation → Batch into monthly patch cycle</li>
+    </ul>
+  </div>
+
+  <h2>3. Dashboard Breakdown</h2>
+  <p>
+    Below is a simplified representation of the type of dashboard I build for leadership
+    and engineering teams. This helps track progress and highlight urgent risks.
+  </p>
+
+  <div class="example-box">
+    <strong>Fictional Dashboard Snapshot:</strong><br><br>
+
+    <em>Top 5 Critical Vulnerabilities:</em><br>
+    - CVE‑2023‑12345 — Remote Code Execution (Exploit Available)<br>
+    - CVE‑2022‑99887 — Privilege Escalation<br>
+    - CVE‑2024‑55678 — OpenSSL Buffer Overflow<br>
+    - CVE‑2023‑44321 — SMB Signing Disabled<br>
+    - CVE‑2021‑34527 — PrintNightmare Variant<br><br>
+
+    <em>Assets With Most Critical Findings:</em><br>
+    - FIN‑SRV‑02 (5 critical)<br>
+    - APP‑SRV‑11 (3 critical)<br>
+    - HR‑DB‑01 (2 critical)<br><br>
+
+    <em>Remediation Progress:</em><br>
+    - 68% of High/Critical vulnerabilities resolved<br>
+    - 32% remaining (scheduled in patch cycle)<br>
+  </div>
+
+  <h2>4. Communication & Remediation Workflow</h2>
+  <p>
+    My communication around vulnerabilities was done on an as‑needed basis rather than recurring
+    weekly summaries. When critical or high‑risk issues were identified, I coordinated directly
+    with the appropriate engineering or system owners to ensure the findings were understood and
+    remediation was scheduled. Once fixes were applied, I validated them through rescans or
+    follow‑up checks.
+  </p>
+
+  <ul>
+    <li>Notifying system owners when critical/high vulnerabilities were discovered</li>
+    <li>Providing context on exploitability and business impact</li>
+    <li>Coordinating remediation timelines based on urgency</li>
+    <li>Validating fixes through rescans or verification steps</li>
+    <li>Escalating only when necessary (e.g., overdue critical items)</li>
+  </ul>
+
+  <h2>5. Final Outcome</h2>
+  <p>
+    By implementing structured prioritization and targeted communication, I helped reduce
+    vulnerability backlogs, improve patch compliance, and strengthen overall security posture.
+  </p>
+
+</section>
+
+<footer>
+  © 2025 Luca Iannino — Cybersecurity Portfolio
+</footer>
+
+</body>
+</html>
