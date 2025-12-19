@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SIEM Alert Triage Playbook | Luca Iannino</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0a0f14;
+      color: #e0e0e0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d1117;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00b3ff;
+    }
+
+    section {
+      padding: 80px 10% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      margin-bottom: 15px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .example-box {
+      background: #111820;
+      border: 1px solid #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
+</nav>
+
+<section>
+  <h1>SIEM Alert Triage Playbook</h1>
+
+  <p>
+    This playbook outlines my structured approach to triaging security alerts in a SIEM environment.
+    It reflects real workflows I’ve used in production environments, adapted with redacted and
+    fictionalized examples for confidentiality.
+  </p>
+
+  <h2>1. Initial Alert Review</h2>
+  <ul>
+    <li>Identify alert type (malware, authentication anomaly, privilege escalation, network activity).</li>
+    <li>Check severity level assigned by the SIEM.</li>
+    <li>Review timestamp and affected host/user.</li>
+    <li>Determine whether the alert is part of a known pattern or campaign.</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Example Alert:</strong><br>
+    <em>“Suspicious PowerShell Execution Detected on HOST‑A12”</em><br>
+    Severity: High<br>
+    User: <em>jdoe</em><br>
+    Command: <em>powershell.exe -enc …</em>
+  </div>
+
+  <h2>2. Enrichment & Context Gathering</h2>
+  <ul>
+    <li>Check endpoint logs (CrowdStrike, Defender, etc.).</li>
+    <li>Review recent authentication activity for the user.</li>
+    <li>Look for related alerts within the same timeframe.</li>
+    <li>Check asset criticality (server, workstation, privileged user).</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>What I Look For:</strong>
+    <ul>
+      <li>Was the user logged in locally or remotely?</li>
+      <li>Is the PowerShell command obfuscated?</li>
+      <li>Has this host triggered alerts recently?</li>
+      <li>Any known vulnerabilities on the system?</li>
+    </ul>
+  </div>
+
+  <h2>3. Determine True vs. False Positive</h2>
+  <p>I evaluate whether the alert represents real malicious activity or expected behavior.</p>
+
+  <ul>
+    <li>Check if the user is part of IT or admin teams.</li>
+    <li>Verify if the command matches legitimate tools or scripts.</li>
+    <li>Look for signs of lateral movement or privilege escalation.</li>
+  </ul>
+
+  <h2>4. Response Actions</h2>
+  <ul>
+    <li>Isolate the host if malicious activity is confirmed.</li>
+    <li>Reset user credentials if compromise is suspected.</li>
+    <li>Block malicious IPs or domains.</li>
+    <li>Collect forensic artifacts (logs, processes, hashes).</li>
+    <li>Escalate to Tier 2/IR if needed.</li>
+  </ul>
+
+  <h2>5. Documentation & Closure</h2>
+  <p>Every alert is documented with:</p>
+  <ul>
+    <li>Summary of findings</li>
+    <li>Steps taken</li>
+    <li>Evidence collected</li>
+    <li>Final determination (TP/FP/Benign)</li>
+    <li>Recommendations for prevention</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Sample Investigation Notes:</strong><br>
+    - Alert triggered by encoded PowerShell command.<br>
+    - User is non‑technical; activity unexpected.<br>
+    - Endpoint logs show connection to known malicious IP.<br>
+    - Host isolated; password reset; case escalated to IR.<br>
+    - Final Verdict: <strong>True Positive — Malware Execution</strong>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Luca Iannino — Cybersecurity Portfolio
+</footer>
+
+</body>
+</html>
