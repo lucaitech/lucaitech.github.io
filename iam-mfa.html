@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IAM & MFA Implementation | Luca Iannino</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0a0f14;
+      color: #e0e0e0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d1117;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00b3ff;
+    }
+
+    section {
+      padding: 80px 10% 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      color: #00ffff;
+      margin-bottom: 15px;
+    }
+
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .example-box {
+      background: #111820;
+      border: 1px solid #1f2937;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#projects">Projects</a>
+</nav>
+
+<section>
+  <h1>IAM & MFA Implementation</h1>
+
+  <p>
+    This project highlights my hands-on experience managing identity and access across two major
+    platforms: Microsoft Entra (Azure AD) and Okta. My responsibilities included assigning roles,
+    enforcing MFA, onboarding users, and ensuring access controls aligned with security policies.
+    All examples below are fictionalized but accurately reflect the workflows I performed.
+  </p>
+
+  <h2>1. Role Assignment in Microsoft Entra</h2>
+  <p>
+    In Microsoft Entra, I regularly assigned and adjusted user roles based on job function,
+    least-privilege principles, and access requests. This included both built-in roles and
+    custom roles depending on the environment.
+  </p>
+
+  <ul>
+    <li>Assigning roles such as Global Reader, User Administrator, and Application Administrator</li>
+    <li>Reviewing access requests for accuracy and necessity</li>
+    <li>Ensuring users were placed in the correct security groups</li>
+    <li>Removing elevated roles when no longer required</li>
+    <li>Validating permissions after assignment</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Example Role Assignment (Fictional):</strong><br><br>
+    User: <em>jsmith@company.com</em><br>
+    Requested Role: <em>User Administrator</em><br>
+    Verification: Confirmed with manager + ticket approval<br>
+    Action: Role assigned, group membership updated<br>
+    Follow-Up: Verified access by checking Entra audit logs
+  </div>
+
+  <h2>2. Okta MFA Setup & User Onboarding</h2>
+  <p>
+    I also handled MFA enrollment and troubleshooting in Okta. This included onboarding new users,
+    enforcing MFA policies, and assisting employees with device or authentication issues.
+  </p>
+
+  <ul>
+    <li>Activating Okta accounts for new hires</li>
+    <li>Enforcing MFA enrollment (Okta Verify, SMS, or Email)</li>
+    <li>Resetting MFA factors when users changed devices</li>
+    <li>Unlocking accounts and clearing authentication attempts</li>
+    <li>Ensuring users completed MFA setup before accessing sensitive systems</li>
+  </ul>
+
+  <div class="example-box">
+    <strong>Example MFA Setup (Fictional):</strong><br><br>
+    User: <em>mgarcia@company.com</em><br>
+    Issue: New phone → Okta Verify not transferring<br>
+    Action: Reset Okta factors + re-enrolled user<br>
+    Result: Successful MFA login validated through Okta logs
+  </div>
+
+  <h2>3. Access Control Improvements</h2>
+  <p>
+    By coordinating role assignments in Entra and MFA enforcement in Okta, I helped strengthen
+    identity security and reduce unauthorized access risks. My work contributed to:
+  </p>
+
+  <ul>
+    <li>Cleaner role assignments aligned with least privilege</li>
+    <li>Consistent MFA coverage across the organization</li>
+    <li>Reduced authentication issues through proactive support</li>
+    <li>Improved audit readiness through accurate access records</li>
+  </ul>
+
+  <h2>4. Final Outcome</h2>
+  <p>
+    This project demonstrates my ability to manage identity lifecycle tasks, enforce MFA,
+    and maintain secure access controls across multiple platforms. These workflows directly
+    supported the organization’s security posture and compliance requirements.
+  </p>
+
+</section>
+
+<footer>
+  © 2025 Luca Iannino — Cybersecurity Portfolio
+</footer>
+
+</body>
+</html>
