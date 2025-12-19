@@ -1,211 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luca Iannino | Cybersecurity Analyst</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luca Iannino | Cybersecurity Analyst</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0a0f14;
-            color: #e0e0e0;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0a0f14;
+      color: #e0e0e0;
+    }
 
-        /* NAVBAR */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #0d1117;
-            padding: 15px 0;
-            text-align: center;
-            z-index: 1000;
-            border-bottom: 1px solid #1f2937;
-        }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d1117;
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
 
-        nav a {
-            margin: 0 20px;
-            color: #00ff9d;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    nav a {
+      margin: 0 15px;
+      color: #00ff9d;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-        nav a:hover {
-            color: #00b3ff;
-        }
+    nav a:hover {
+      color: #00b3ff;
+    }
 
-        /* SECTIONS */
-        section {
-            padding: 100px 10%;
-        }
+    section {
+      padding: 60px 8% 40px;
+    }
 
-        h1, h2 {
-            color: #00ff9d;
-        }
+    h1, h2 {
+      color: #00ff9d;
+      margin-bottom: 10px;
+    }
 
-        /* PROFILE PHOTO GLOW */
-        .profile-pic {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #00ff9d;
-            display: block;
-            margin: 0 auto 20px;
-            box-shadow: 0 0 15px #00ff9d;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #00ff9d;
+      display: block;
+      margin: 0 auto 15px;
+      box-shadow: 0 0 15px #00ff9d;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-        @keyframes glow {
-            from { box-shadow: 0 0 10px #00ff9d; }
-            to { box-shadow: 0 0 25px #00b3ff; }
-        }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ff9d; }
+      to { box-shadow: 0 0 25px #00b3ff; }
+    }
 
-        /* TYPING EFFECT */
-        .typing {
-            width: 22ch;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid #00ff9d;
-            animation: typing 3s steps(22), blink .75s step-end infinite;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 2rem;
-            color: #00ff9d;
-        }
+    .typing {
+      width: 22ch;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00ff9d;
+      animation: typing 2.5s steps(22), blink .75s step-end infinite;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #00ff9d;
+    }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 22ch; }
-        }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
 
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: #00ff9d; }
-        }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ff9d; }
+    }
 
-        /* PROJECT CARDS */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+    p {
+      text-align: center;
+      max-width: 700px;
+      margin: 15px auto 30px;
+      line-height: 1.5;
+    }
 
-        .project-card {
-            background: #111820;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #1f2937;
-            transition: 0.3s;
-        }
+    ul {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff9d;
-        }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
 
-        .project-card h3 {
-            color: #00b3ff;
-        }
+    .project-card {
+      background: #111820;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+      transition: 0.3s;
+    }
 
-        .project-card a {
-            color: #00ff9d;
-            text-decoration: none;
-        }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #00ff9d;
+    }
 
-        .project-card a:hover {
-            color: #00b3ff;
-        }
+    .project-card h3 {
+      color: #00b3ff;
+      margin-bottom: 8px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #777;
-        }
-    </style>
+    .project-card a {
+      color: #00ff9d;
+      text-decoration: none;
+    }
+
+    .project-card a:hover {
+      color: #00b3ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+  </style>
 </head>
 
 <body>
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-
-    <!-- ✅ GLOWING PHOTO -->
-    <img src="photo.jfif" alt="Luca Iannino" class="profile-pic">
-
-    <!-- ✅ TYPING EFFECT NAME -->
-    <h1 class="typing">Hi, I'm Luca Iannino</h1>
-
-    <p style="text-align:center; max-width:700px; margin:20px auto;">
-        Cybersecurity Analyst specializing in threat detection, SIEM optimization,
-        vulnerability management, and incident response. I strengthen enterprise
-        security posture through proactive defense and strategic workflows.
-    </p>
+  <img src="photo.jfif" alt="Luca Iannino" class="profile-pic" />
+  <h1 class="typing">Hi, I'm Luca Iannino</h1>
+  <p>
+    Cybersecurity Analyst specializing in threat detection, SIEM optimization,
+    vulnerability management, and incident response. I strengthen enterprise
+    security posture through proactive defense and strategic workflows.
+  </p>
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>Threat Detection & Incident Response</li>
-        <li>SIEM (CrowdStrike, Splunk)</li>
-        <li>Vulnerability Management (Rapid7, Wiz)</li>
-        <li>IAM & MFA (Duo, PingID)</li>
-        <li>Firewall Log Analysis</li>
-        <li>Endpoint Security & Malware Analysis</li>
-        <li>Windows System Administration</li>
-        <li>Compliance: SOC 2, NIST, ISO 27001</li>
-    </ul>
+  <h2>Skills</h2>
+  <ul>
+    <li>Threat Detection & Incident Response</li>
+    <li>SIEM (CrowdStrike, Splunk)</li>
+    <li>Vulnerability Management (Rapid7, Wiz)</li>
+    <li>IAM & MFA (Duo, PingID)</li>
+    <li>Firewall Log Analysis</li>
+    <li>Endpoint Security & Malware Analysis</li>
+    <li>Windows System Administration</li>
+    <li>Compliance: SOC 2, NIST, ISO 27001</li>
+  </ul>
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-            <h3>🔍 SIEM Alert Triage Playbook</h3>
-            <p>A redacted, real-world style workflow showing how I triage alerts, investigate threats, and escalate incidents.</p>
-            <a href="#">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>🛡️ Vulnerability Management Dashboard</h3>
-            <p>Sample reporting and remediation tracking based on Rapid7 scan data.</p>
-            <a href="#">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>🔐 IAM & MFA Implementation</h3>
-            <p>Documentation of MFA rollout for 400+ users, including access control improvements.</p>
-            <a href="#">View Project</a>
-        </div>
-
-        <div class="project-card">
-            <h3>📊 Phishing Reduction Initiative</h3>
-            <p>Awareness program that reduced phishing incidents by 40%.</p>
-            <a href="#">View Project</a>
-        </div>
-
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>🔍 SIEM Alert Triage Playbook</h3>
+      <p>A redacted, real-world style workflow showing how I triage alerts, investigate threats, and escalate incidents.</p>
+      <a href="#">View Project</a>
     </div>
+    <div class="project-card">
+      <h3>🛡️ Vulnerability Management Dashboard</h3>
+      <p>Sample reporting and remediation tracking based on Rapid7 scan data.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>🔐 IAM & MFA Implementation</h3>
+      <p>Documentation of MFA rollout for 400+ users, including access control improvements.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>📊 Phishing Reduction Initiative</h3>
+      <p>Awareness program that reduced phishing incidents by 40%.</p>
+      <a href="#">View Project</a>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:lu.iannino@gmail.com">lu.iannino@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/lucaitechnology">lucaitechnology</a></p>
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:lu.iannino@gmail.com">lu.iannino@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/lucaitechnology">lucaitechnology</a></p>
 </section>
 
 <footer>
-    © 2025 Luca Iannino — Cybersecurity Portfolio
+  © 2025 Luca Iannino — Cybersecurity Portfolio
 </footer>
 
 </body>
