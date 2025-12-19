@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://lucaitech.github.io/">
   <meta property="og:image" content="photo.jfif">
 
-  <!-- ✅ Twitter Card (universal preview format) -->
+  <!-- ✅ Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Luca Iannino | Cybersecurity Analyst Portfolio">
   <meta name="twitter:description" content="Cybersecurity Analyst specializing in SIEM, vulnerability management, IAM/MFA, and incident response.">
@@ -190,6 +190,20 @@
       padding: 20px;
       color: #777;
     }
+
+    /* ✅ Glitch animation */
+    @keyframes glitchStory {
+      0% { opacity: 1; transform: none; }
+      20% { opacity: 0.85; transform: skew(0.5deg); }
+      40% { opacity: 1; transform: skew(-0.5deg); }
+      60% { opacity: 0.9; transform: skew(0.3deg); }
+      80% { opacity: 1; transform: none; }
+      100% { opacity: 1; transform: none; }
+    }
+
+    .glitch-story {
+      animation: glitchStory 2.5s infinite;
+    }
   </style>
 </head>
 
@@ -208,7 +222,7 @@
 
   <img src="photo.jfif" alt="Photo of cybersecurity analyst Luca Iannino" class="profile-pic" />
 
-  <!-- ✅ Hidden SEO H1 (Google sees it, users don't) -->
+  <!-- ✅ Hidden SEO H1 -->
   <h1 style="position:absolute; left:-9999px; top:-9999px;">
     Cybersecurity Analyst — Luca Iannino
   </h1>
@@ -216,7 +230,7 @@
   <!-- ✅ Visible animated intro -->
   <h1 class="typing">My name is Luca</h1>
 
-  <!-- ✅ Visible subtitle (small, clean, centered) -->
+  <!-- ✅ Visible subtitle -->
   <p style="
     text-align:center;
     margin-top:5px;
@@ -238,6 +252,17 @@
       Read my full journey →
     </a>
   </p>
+
+  <!-- ✅ Glitch text animation -->
+  <div class="glitch-story" style="
+    text-align:center;
+    margin-top:12px;
+    font-size:1rem;
+    color:#00ffff;
+  ">
+    Every alert tells a story...
+  </div>
+
 </section>
 
 <section id="skills">
