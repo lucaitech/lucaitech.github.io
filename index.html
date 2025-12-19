@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
 
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/jpeg" href="favicon.jpg.jpg">
+
   <!-- ✅ SEO Meta Description -->
   <meta name="description" content="Cybersecurity Analyst portfolio showcasing SIEM triage, vulnerability management, IAM/MFA administration, phishing investigation, and incident response workflows.">
 
@@ -59,7 +62,7 @@
       padding: 60px 8% 40px;
     }
 
-    /* ✅ Tight desktop spacing (Option B) */
+    /* ✅ Tight desktop spacing */
     @media (min-width: 768px) {
       section {
         padding: 30px 8% 10px;
@@ -222,6 +225,20 @@
       80% { transform: translate(-2px,1px); }
       100% { transform: translate(0,0); }
     }
+
+    /* ✅ Neon Glow Divider */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      margin: 40px 0;
+      background: linear-gradient(
+        to right,
+        rgba(0, 255, 255, 0) 0%,
+        rgba(0, 255, 255, 0.4) 50%,
+        rgba(0, 255, 255, 0) 100%
+      );
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+    }
   </style>
 </head>
 
@@ -309,6 +326,8 @@
 
 </section>
 
+<div class="section-divider"></div>
+
 <section id="skills">
   <h2>Skills</h2>
   <ul>
@@ -323,6 +342,8 @@
   </ul>
 </section>
 
+<div class="section-divider"></div>
+
 <section id="degrees">
   <h2>Degrees</h2>
   <ul>
@@ -330,6 +351,8 @@
     <li>Associate of Science</li>
   </ul>
 </section>
+
+<div class="section-divider"></div>
 
 <section id="certifications">
   <h2>Certifications</h2>
@@ -350,6 +373,8 @@
     </div>
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section id="projects">
   <h2>Projects</h2>
@@ -391,6 +416,8 @@
 
   </div>
 </section>
+
+<div class="section-divider"></div>
 
 <section id="contact">
   <h2>Contact</h2>
