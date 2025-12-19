@@ -1,168 +1,286 @@
-<style>
-  body {
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #0a0f14;
-    color: #e0e0e0;
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luca Iannino | Cybersecurity Analyst</title>
 
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #0d1117;
-    padding: 10px 0;
-    text-align: center;
-    z-index: 1000;
-    border-bottom: 1px solid #1f2937;
-  }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0a0f14;
+      color: #e0e0e0;
+    }
 
-  nav a {
-    margin: 0 12px;
-    color: #00ffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d1117;
+      padding: 8px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid #1f2937;
+    }
 
-  nav a:hover {
-    color: #00b3ff;
-  }
+    nav a {
+      margin: 0 12px;
+      color: #00ffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-  section {
-    padding: 40px 8% 30px;
-  }
+    nav a:hover {
+      color: #00b3ff;
+    }
 
-  h1, h2 {
-    color: #00ffff;
-    margin-bottom: 6px;
-  }
+    section {
+      padding: 40px 8% 30px; /* tightened from 60px/40px */
+    }
 
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #00ffff;
-    display: block;
-    margin: 0 auto 10px;
-    box-shadow: 0 0 15px #00ffff;
-    animation: glow 2s ease-in-out infinite alternate;
-  }
+    h1, h2 {
+      color: #00ffff;
+      margin-bottom: 6px; /* tightened from 10px */
+    }
 
-  @keyframes glow {
-    from { box-shadow: 0 0 10px #00ffff; }
-    to { box-shadow: 0 0 25px #00b3ff; }
-  }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #00ffff;
+      display: block;
+      margin: 0 auto 10px; /* tightened from 15px */
+      box-shadow: 0 0 15px #00ffff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-  .typing {
-    width: 22ch;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 3px solid #00ffff;
-    animation: typing 2.5s steps(22), blink .75s step-end infinite;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.6rem;
-    color: #00ffff;
-  }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ffff; }
+      to { box-shadow: 0 0 25px #00b3ff; }
+    }
 
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 22ch; }
-  }
+    .typing {
+      width: 22ch;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid #00ffff;
+      animation: typing 2.5s steps(22), blink .75s step-end infinite;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.6rem; /* slightly smaller */
+      color: #00ffff;
+    }
 
-  @keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: #00ffff; }
-  }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 22ch; }
+    }
 
-  p {
-    text-align: center;
-    max-width: 700px;
-    margin: 10px auto 20px;
-    line-height: 1.4;
-  }
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #00ffff; }
+    }
 
-  ul {
-    max-width: 600px;
-    margin: 0 auto;
-    padding-left: 20px;
-  }
+    p {
+      text-align: center;
+      max-width: 700px;
+      margin: 10px auto 20px; /* tightened from 15px/30px */
+      line-height: 1.4; /* slightly tighter */
+    }
 
-  .cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
-    margin-top: 10px;
-  }
+    ul {
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
 
-  .cert-card {
-    background: #111820;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #1f2937;
-    text-align: center;
-    color: #00ffff;
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0,255,255,0.1);
-    transition: 0.3s;
-  }
+    /* CERTIFICATION GRID */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px; /* tightened from 20px */
+      margin-top: 10px; /* tightened from 20px */
+    }
 
-  .cert-card:hover {
-    border-color: #00ffff;
-    box-shadow: 0 0 20px rgba(0,255,255,0.3);
-    transform: translateY(-3px);
-  }
+    .cert-card {
+      background: #111820;
+      padding: 12px; /* tightened from 15px */
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+      text-align: center;
+      color: #00ffff;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+      transition: 0.3s;
+    }
 
-  .cert-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 6px;
-  }
+    .cert-card:hover {
+      border-color: #00ffff;
+      box-shadow: 0 0 20px rgba(0,255,255,0.3);
+      transform: translateY(-3px);
+    }
 
-  .cert-card span {
-    display: block;
-    font-size: 0.85rem;
-  }
+    .cert-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 6px; /* tightened from 8px */
+    }
 
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
+    .cert-card span {
+      display: block;
+      font-size: 0.85rem;
+    }
 
-  .project-card {
-    background: #111820;
-    padding: 16px;
-    border-radius: 10px;
-    border: 1px solid #1f2937;
-    transition: 0.3s;
-  }
+    /* PROJECTS */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; /* tightened from 20px */
+    }
 
-  .project-card:hover {
-    transform: translateY(-5px);
-    border-color: #00ffff;
-  }
+    .project-card {
+      background: #111820;
+      padding: 16px; /* tightened from 18px */
+      border-radius: 10px;
+      border: 1px solid #1f2937;
+      transition: 0.3s;
+    }
 
-  .project-card h3 {
-    color: #00b3ff;
-    margin-bottom: 6px;
-  }
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #00ffff;
+    }
 
-  .project-card a {
-    color: #00ffff;
-    text-decoration: none;
-  }
+    .project-card h3 {
+      color: #00b3ff;
+      margin-bottom: 6px; /* tightened from 8px */
+    }
 
-  .project-card a:hover {
-    color: #00b3ff;
-  }
+    .project-card a {
+      color: #00ffff;
+      text-decoration: none;
+    }
 
-  footer {
-    text-align: center;
-    padding: 16px;
-    color: #777;
-  }
-</style>
+    .project-card a:hover {
+      color: #00b3ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px; /* tightened from 20px */
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <img src="photo.jfif" alt="Luca Iannino" class="profile-pic" />
+  <h1 class="typing">Hi, I'm Luca Iannino</h1>
+  <p>
+    Cybersecurity Analyst specializing in threat detection, SIEM optimization,
+    vulnerability management, and incident response. I strengthen enterprise
+    security posture through proactive defense and strategic workflows.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Threat Detection & Incident Response</li>
+    <li>SIEM (CrowdStrike, Splunk)</li>
+    <li>Vulnerability Management (Rapid7, Wiz)</li>
+    <li>IAM & MFA (Duo, PingID)</li>
+    <li>Firewall Log Analysis</li>
+    <li>Endpoint Security & Malware Analysis</li>
+    <li>Windows System Administration</li>
+    <li>Compliance: SOC 2, NIST, ISO 27001</li>
+  </ul>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <p>Official certification badges.</p>
+
+  <div class="cert-grid">
+    <div class="cert-card">
+      <img src="SecC.jpg" alt="CompTIA Security+ certification badge">
+      <span>CompTIA Security+</span>
+    </div>
+    <div class="cert-card">
+      <img src="GCC.jpeg" alt="Google Cybersecurity certification badge">
+      <span>Google Cybersecurity Certificate</span>
+    </div>
+    <div class="cert-card">
+      <img src="edx.jpg" alt="edX Governance & Risk certification badge">
+      <span>edX Governance & Risk Certificate</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+
+    <div class="project-card">
+      <h3>🔍 SIEM Alert Triage Playbook</h3>
+      <p>A redacted workflow showing how I triage alerts, investigate threats, and escalate incidents.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>🛡️ Vulnerability Management Dashboard</h3>
+      <p>Sample reporting and remediation tracking based on Rapid7 scan data.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>🔐 IAM & MFA Implementation</h3>
+      <p>Documentation of MFA rollout for 400+ users, including access control improvements.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>📊 Phishing Reduction Initiative</h3>
+      <p>Awareness program that reduced phishing incidents by 40%.</p>
+      <a href="#">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>📘 IRP Maturity Gap Closure Project</h3>
+      <p>
+        Conducted a full IRP maturity assessment by benchmarking our Incident Response Plan
+        against a higher‑maturity peer organization. Closed key procedural and communication
+        gaps, improving response efficiency and alignment with best‑practice frameworks.
+      </p>
+      <a href="irp-gap-closure.html">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:lu.iannino@gmail.com">lu.iannino@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/lucaitechnology">lucaitechnology</a></p>
+</section>
+
+<footer>
+  © 2025 Luca Iannino — Cybersecurity Portfolio
+</footer>
+
+</body>
+</html>
